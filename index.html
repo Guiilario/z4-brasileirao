@@ -279,14 +279,6 @@ details.metodo dd{margin:0}
     <h3 class="met-h3">Um jogo, passo a passo</h3>
     <div class="exemplo" id="exemplo"></div>
 
-    <h3 class="met-h3">Conferências</h3>
-    <div class="kpis confere">
-      <div class="kpi"><b>25%</b><span>Pontos que os mandantes fizeram contra o Flamengo em 2026 (10 vitórias, 4 empates e 3 derrotas dele fora). Receber o Flamengo vale 72 no índice, mais que visitar o Vasco (70), o Bragantino (68) ou o Santos (64).</span></div>
-      <div class="kpi"><b>43 e 41</b><span>Pontos do 16º e do 17º na simulação. De 2006 a 2025, a média foi 43,4 e 41,7.</span></div>
-      <div class="kpi"><b>0 de 70</b><span>Clubes com 43 a 46 pontos a 4 rodadas do fim que caíram em 20 anos. Na simulação, quem termina com 45 cai em menos de 1%.</span></div>
-      <div class="kpi"><b>0,02</b><span>Correlação entre a diferença casa-fora de um clube no 1º e no 2º turno, em 400 casos de 2006 a 2025. Por isso o índice usa só o returno: o momento de cada um em casa e fora.</span></div>
-    </div>
-
     <div class="fora">
       <h3>O que fica de fora</h3>
       <p>Lesões, suspensões e a motivação de quem já não disputa nada. O xG e os pontos recentes usam só 6 jogos, e o returno, 7 ou 8 em cada mando. O mercado discorda do índice em alguns jogos: em Grêmio x Bahia, as casas dão 40% ao Grêmio e o índice, 47%. É uma fotografia de 07/11/2026, depois de Vitória 0 x 3 Fluminense: o painel não se atualiza sozinho.</p>
@@ -451,7 +443,7 @@ tabela("tabIndice", comInd, [
   {rot: "Clube", val: r => r.clube, cel: r => clube(r.clube)},
   {rot: "Pontos", val: r => r.pontos, n: true},
   {rot: "Dificuldade restante", val: r => r.dificuldade, cel: r => el("span", {class: "dif " + faixa(r.dificuldade)}, Math.round(r.dificuldade)), n: true},
-  {rot: "Casa · fora no returno", val: r => r.casa, cel: r => Math.round(r.casa) + " · " + Math.round(r.fora) + "%", n: true},
+  {rot: "Casa · fora no returno", val: r => r.casa, cel: r => Math.round(r.casa) + "% · " + Math.round(r.fora) + "%", n: true},
   {rot: "No ano", val: r => r.aproveitamento, cel: r => Math.round(r.aproveitamento) + "%", n: true},
   {rot: "xG 6 jogos", val: r => r.xg_6, cel: r => sgn2(r.xg_6), n: true},
   {rot: "Pontos 6 jogos", val: r => r.pontos_6, cel: r => r.pontos_6 + "/18", n: true},
